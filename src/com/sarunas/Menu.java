@@ -13,6 +13,8 @@ public class Menu {
     protected double fatDayCalories;
     protected double carbsDayCalories;
 
+    public Menu() {}
+
     public Menu(int caloriesOfDay) {
         this.caloriesOfDay = caloriesOfDay;
         this.proteinDayCalories = (this.caloriesOfDay * 0.2);
@@ -29,7 +31,7 @@ public class Menu {
     List<Fruits> fruits = menuList.fruitMenu();
     List<String> summerVegetables = menuList.summerVegetablesMenu();
     List<String> winterVegetables = menuList.winterVegetablesMenu();
-    List<String> partyMenu = menuList.partyMenu();
+    List<PartyFood> partyMenu = menuList.partyMenu();
 
 
     public void breakfastMenu() {
@@ -71,17 +73,25 @@ public class Menu {
         System.out.println(fat.get(z).getName() + " " + dinnerFatWeight + "g");
     }
 
-    public void summerTimeVegetables() {
+    public String summerTimeVegetables() {
         int x = random.nextInt(summerVegetables.size());
-        System.out.println(summerVegetables.get(x) + " 100g");
+        return summerVegetables.get(x) + " 100g";
     }
 
-    public void winterTimeVegetables() {
+    public String winterTimeVegetables() {
         int x = random.nextInt(winterVegetables.size());
-        System.out.println(winterVegetables.get(x) + " 100g");
+        return winterVegetables.get(x) + " 100g";
     }
 
-    public void partyMenu(int numberOfDishes) {
+    public void partyMenu(int numberOfDishes, int participants) {
+        int portion = 0;
+        if (participants <= 8) {
+            portion = 1;
+        } else if (participants > 8 && participants <= 16){
+            portion = 2;
+        } else {
+            portion = 3;
+        }
         System.out.println();
         System.out.println("Party menu: ");
         List<Integer> counting = new ArrayList<>();
@@ -94,10 +104,8 @@ public class Menu {
             } else {
                 int y = x;
                 counting.add(y);
-                System.out.println(partyMenu.get(x));
+                System.out.println(partyMenu.get(x).getName() + " " + (portion * partyMenu.get(x).getQuantity()) + "pcs.");
             }
         }
     }
-
-
 }

@@ -2,15 +2,30 @@ package com.sarunas;
 
 public class Product {
 
-     private String name;
-     private int weight;
-     private int calories;
+    private String name;
+    private int weight;
+    private int calories;
+    private  int quantity;
 
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Product(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
 
     public Product(String name, int weight, int calories) {
         this.name = name;
         this.weight = weight;
         this.calories = calories;
+
     }
 
     public String getName() {

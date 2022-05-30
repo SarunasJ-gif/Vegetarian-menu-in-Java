@@ -136,24 +136,41 @@ public class MenuList {
         return vegetablesInWinter;
     }
 
-    public List<String> partyMenu() {
-        List<String> partyMeal = new ArrayList<>();
-        partyMeal.add("Ice creams");
-        partyMeal.add("Snickers cake");
-        partyMeal.add("Donuts");
-        partyMeal.add("Chocolate cakes with Riccota cheese filling and light cream, flavored with fresh raspberries");
-        partyMeal.add("Tiramisu flavored with amaret and dark chocolate");
-        partyMeal.add("Containers with Crème brûlée cream and berries");
-        partyMeal.add("Wild berry and cream cheese pies");
-        partyMeal.add("Crispy cheese balls");
-        partyMeal.add("Cucumber bites with avocado and shrim");
-        partyMeal.add("Crispy bits of broccoli and cheese");
-        partyMeal.add("Fried lavash rolls with cheese");
-        partyMeal.add("Crispy onion rings in batter");
-        partyMeal.add("Avocado appetizers with herring and mangoes");
-        partyMeal.add("Pickled olives");
-        partyMeal.add("Stuffed dates");
-        partyMeal.add("Chocolate truffles");
+    public List<PartyFood> partyMenu() {
+        List<PartyFood> partyMeal = new ArrayList<>();
+        PartyFood iceCream = new PartyFood("Ice creams", 8);
+        PartyFood cake = new PartyFood("Snickers cake", 1);
+        PartyFood donuts = new PartyFood("Donuts", 8);
+        PartyFood chocolateCake = new PartyFood("Chocolate cakes with Riccota cheese filling and light cream, flavored with fresh raspberries", 8);
+        PartyFood tiramisu = new PartyFood("Tiramisu flavored with amaret and dark chocolate", 8);
+        PartyFood berries = new PartyFood("Containers with Crème brûlée cream and berries", 8);
+        PartyFood berryCheese = new PartyFood("Wild berry and cream cheese pies", 8);
+        PartyFood cheeseBalls = new PartyFood("Crispy cheese balls", 8);
+        PartyFood avocadoShrim = new PartyFood("Cucumber bites with avocado and shrim", 8);
+        PartyFood broccoliAndCheese = new PartyFood("Crispy bits of broccoli and cheese", 8);
+        PartyFood lavashRolls = new PartyFood("Fried lavash rolls with cheese", 8);
+        PartyFood orionRings = new PartyFood("Crispy onion rings in batter", 8);
+        PartyFood avocado = new PartyFood("Avocado appetizers with herring and mangoes", 8);
+        PartyFood olives = new PartyFood("Pickled olives", 8);
+        PartyFood stuffedDates = new PartyFood("Stuffed dates", 8);
+        PartyFood chocolateTruffles = new PartyFood("Chocolate truffles", 8);
+
+        partyMeal.add(iceCream);
+        partyMeal.add(cake);
+        partyMeal.add(donuts);
+        partyMeal.add(chocolateCake);
+        partyMeal.add(tiramisu);
+        partyMeal.add(berries);
+        partyMeal.add(berryCheese);
+        partyMeal.add(cheeseBalls);
+        partyMeal.add(avocadoShrim);
+        partyMeal.add(broccoliAndCheese);
+        partyMeal.add(lavashRolls);
+        partyMeal.add(orionRings);
+        partyMeal.add(avocado);
+        partyMeal.add(olives);
+        partyMeal.add(stuffedDates);
+        partyMeal.add(chocolateTruffles);
 
         return partyMeal;
     }
