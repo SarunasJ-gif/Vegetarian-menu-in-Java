@@ -34,43 +34,46 @@ public class Menu {
     List<PartyFood> partyMenu = menuList.partyMenu();
 
 
-    public void breakfastMenu() {
+    public String breakfastMenu() {
         System.out.println();
         System.out.println("Breakfast: ");
         int x = random.nextInt(carbs.size());
         int breakfastCarbsWeight = (int) (carbs.get(x).getWeight() * (this.carbsDayCalories / carbs.get(x).getCalories()) * 0.5 * 0.8);
-        System.out.println(carbs.get(x).getName() + " " + breakfastCarbsWeight + "g");
+        String carb = carbs.get(x).getName() + " " + breakfastCarbsWeight + "g";
         int y = random.nextInt(fruits.size());
         int breakfastFruitsWeight = (int) (fruits.get(y).getWeight() * (this.carbsDayCalories / fruits.get(y).getCalories()) * 0.5 * 0.2);
-        System.out.println(fruits.get(y).getName() + " " + breakfastFruitsWeight + "g");
+        String fruit = fruits.get(y).getName() + " " + breakfastFruitsWeight + "g";
+        return carb + "\n" + fruit;
     }
 
-    public void lunchMenu() {
+    public String lunchMenu() {
         System.out.println();
         System.out.println("Lunch: ");
         int x = random.nextInt(carbs.size());
         int lunchCarbsWeight = (int) (carbs.get(x).getWeight() * (this.carbsDayCalories / carbs.get(x).getCalories()) * 0.4);
-        System.out.println(carbs.get(x).getName() + " " + lunchCarbsWeight + "g");
+        String carb = carbs.get(x).getName() + " " + lunchCarbsWeight + "g";
         int y = random.nextInt(protein.size());
         int lunchProteinWeight = (int) (protein.get(y).getWeight() * (this.proteinDayCalories / protein.get(y).getCalories()) * 0.5);
-        System.out.println(protein.get(y).getName() + " " + lunchProteinWeight + "g");
+        String proteins = protein.get(y).getName() + " " + lunchProteinWeight + "g";
         int z = random.nextInt(fat.size());
         int lunchFatWeight = (int) (fat.get(z).getWeight() * (this.fatDayCalories / fat.get(z).getCalories()) * 0.5);
-        System.out.println(fat.get(z).getName() + " " + lunchFatWeight + "g");
+        String fats = fat.get(z).getName() + " " + lunchFatWeight + "g";
+        return carb + "\n" + proteins + "\n" + fats;
     }
 
-    public void dinnerMenu() {
+    public String dinnerMenu() {
         System.out.println();
         System.out.println("Dinner: ");
         int x = random.nextInt(carbs.size());
         int dinnerCarbsWeight = (int) (carbs.get(x).getWeight() * (this.carbsDayCalories / carbs.get(x).getCalories()) * 0.1);
-        System.out.println(carbs.get(x).getName() + " " + dinnerCarbsWeight + "g");
+        String carb = carbs.get(x).getName() + " " + dinnerCarbsWeight + "g";
         int y = random.nextInt(protein.size());
         int dinnerProteinWeight = (int) (protein.get(y).getWeight() * (this.proteinDayCalories / protein.get(y).getCalories()) * 0.5);
-        System.out.println(protein.get(y).getName() + " " + dinnerProteinWeight + "g");
+        String proteins = protein.get(y).getName() + " " + dinnerProteinWeight + "g";
         int z = random.nextInt(fat.size());
         int dinnerFatWeight = (int) (fat.get(z).getWeight() * (this.fatDayCalories / fat.get(z).getCalories()) * 0.5);
-        System.out.println(fat.get(z).getName() + " " + dinnerFatWeight + "g");
+        String fats = fat.get(z).getName() + " " + dinnerFatWeight + "g";
+        return carb + "\n" + proteins + "\n" + fats;
     }
 
     public String summerTimeVegetables() {
@@ -108,4 +111,7 @@ public class Menu {
             }
         }
     }
+
+
+
 }
