@@ -4,6 +4,7 @@ package com.sarunas;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -19,27 +20,39 @@ public class Main {
                 case "menu":
                     String[] week = {"SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"};
                     System.out.println("Please enter your preferred daily caloric intake: ");
-                    int input = scanner.nextInt();
-                    Menu menu = new Menu(input);
-                    for (String day : week) {
-                        System.out.println("\n\n" + day + ": ");
-                        menu.breakfastMenu();
-                        seasonVegetables();
-                        menu.lunchMenu();
-                        seasonVegetables();
-                        menu.dinnerMenu();
-                        seasonVegetables();
+                    boolean hasNext = scanner.hasNextInt();
+                    if (hasNext) {
+                        int input = scanner.nextInt();
+                        Menu menu = new Menu(input);
+                        for (String day : week) {
+                            System.out.println("\n\n" + day + ": ");
+                            menu.breakfastMenu();
+                            seasonVegetables();
+                            menu.lunchMenu();
+                            seasonVegetables();
+                            menu.dinnerMenu();
+                            seasonVegetables();
+                        }
+                        rightOption = true;
+                    } else {
+                        scanner.nextLine();
+                        break;
                     }
-                    rightOption = true;
                     break;
                 case "party":
                     Menu party = new Menu();
                     System.out.println("Please enter as many dishes as you want to order: ");
-                    int dishes = scanner.nextInt();
-                    System.out.println("Please enter how many participants will attend the party: ");
-                    int participants = scanner.nextInt();
-                    party.partyMenu(dishes, participants);
-                    rightOption = true;
+                    boolean hasInt = scanner.hasNextInt();
+                    if (hasInt) {
+                        int dishes = scanner.nextInt();
+                        System.out.println("Please enter how many participants will attend the party: ");
+                        int participants = scanner.nextInt();
+                        scanner.nextLine();
+                        party.partyMenu(dishes, participants);
+                        rightOption = true;
+                    } else {
+                        scanner.nextLine();
+                    }
                     break;
                 default:
                     System.out.println("Invalid choice, choose one more time: ");
