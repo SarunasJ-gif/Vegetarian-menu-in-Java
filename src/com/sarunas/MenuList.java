@@ -113,7 +113,6 @@ public class MenuList {
         vegetablesInSummer.add("Cabbage");
         vegetablesInSummer.add("Cabbage");
         vegetablesInSummer.add("Bitter herbs");
-        vegetablesInSummer.add("Bitter herbs");
 
         return vegetablesInSummer;
     }
@@ -127,7 +126,6 @@ public class MenuList {
         vegetablesInWinter.add("Roasted peppers");
         vegetablesInWinter.add("Carrots");
         vegetablesInWinter.add("Sour tomatoes");
-        vegetablesInWinter.add("Canned peas");
         vegetablesInWinter.add("Canned peas");
         vegetablesInWinter.add("Sour beets");
         vegetablesInWinter.add("Fried onions");
@@ -174,4 +172,6 @@ public class MenuList {
 
         return partyMeal;
     }
+
+
 }

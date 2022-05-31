@@ -1,26 +1,30 @@
 package com.sarunas;
 
+
 import java.util.List;
 
 public class UpdateMenu {
 
+
     public UpdateMenu() {}
 
-    MenuList menuList = new MenuList();
 
-    List<Protein> protein = menuList.proteinMenu();
-    List<Fat> fat = menuList.fatMenu();
-    List<Carbs> carbs = menuList.carbsMenu();
-    List<Fruits> fruits = menuList.fruitMenu();
-    List<String> summerVegetables = menuList.summerVegetablesMenu();
-    List<String> winterVegetables = menuList.winterVegetablesMenu();
-    List<PartyFood> partyMenu = menuList.partyMenu();
+    private static final MenuList menuList = new MenuList();
+    static final List<Protein> protein = menuList.proteinMenu();
+    static final List<Fat> fat = menuList.fatMenu();
+    static final List<Carbs> carbs = menuList.carbsMenu();
+    static final List<Fruits> fruits = menuList.fruitMenu();
+    static final List<String> summerVegetables = menuList.summerVegetablesMenu();
+    static final List<String> winterVegetables = menuList.winterVegetablesMenu();
+    static final List<PartyFood> partyMenu = menuList.partyMenu();
 
 
     public void addProtein(String name, int weight, int calories) {
         Protein proteinFood = new Protein(name, weight, calories);
         protein.add(proteinFood);
     }
+
+
 
     public void addCarbs(String name, int weight, int calories) {
         Carbs carbsFood = new Carbs(name, weight, calories);
@@ -45,7 +49,7 @@ public class UpdateMenu {
         winterVegetables.add(name);
     }
 
-    public void addFruits(String name, int quantity) {
+    public void addPartyFood(String name, int quantity) {
         PartyFood partyFood = new PartyFood(name, quantity);
         partyMenu.add(partyFood);
     }
@@ -158,6 +162,48 @@ public class UpdateMenu {
             System.out.println("There is no such food in the list");
         } else {
             System.out.println(name  + " was deleted from list.");
+        }
+    }
+
+    public void printProteinList() {
+        for (int i = 0; i < protein.size(); i++) {
+            System.out.println((i + 1) + "." +  protein.get(i).getName() + " " + protein.get(i).getWeight() + "g" +" " + protein.get(i).getCalories() + "kCal ");
+        }
+    }
+
+    public void printCarbsList() {
+        for (int i = 0; i < carbs.size(); i++) {
+            System.out.println((i + 1) + "." +  carbs.get(i).getName() + " " + carbs.get(i).getWeight() + "g" +" " + carbs.get(i).getCalories() + "kCal ");
+        }
+    }
+
+    public void printFatList() {
+        for (int i = 0; i < fat.size(); i++) {
+            System.out.println((i + 1) + "." +  fat.get(i).getName() + " " + fat.get(i).getWeight() + "g" +" " + fat.get(i).getCalories() + "kCal ");
+        }
+    }
+
+    public void printFruitsList() {
+        for (int i = 0; i < fruits.size(); i++) {
+            System.out.println((i + 1) + "." +  fruits.get(i).getName() + " " + fruits.get(i).getWeight() + "g" +" " + fruits.get(i).getCalories() + "kCal ");
+        }
+    }
+
+    public void printSummerVegetablesList() {
+        for (int i = 0; i < summerVegetables.size(); i++) {
+            System.out.println((i + 1) + "." +  summerVegetables.get(i));
+        }
+    }
+
+    public void printWinterVegetablesList() {
+        for (int i = 0; i < winterVegetables.size(); i++) {
+            System.out.println((i + 1) + "." +  winterVegetables.get(i));
+        }
+    }
+
+    public void printPArtyFoodList() {
+        for (int i = 0; i < partyMenu.size(); i++) {
+            System.out.println((i + 1) + "." +  partyMenu.get(i).getName() + " " + partyMenu.get(i).getQuantity() + "pcs.");
         }
     }
 }

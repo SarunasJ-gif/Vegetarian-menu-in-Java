@@ -22,17 +22,16 @@ public class Menu {
         this.carbsDayCalories = this.caloriesOfDay * 0.6;
     }
 
-    MenuList menuList = new MenuList();
 
+ //   UpdateMenu updateMenu = new UpdateMenu();
 
-    List<Protein> protein = menuList.proteinMenu();
-    List<Fat> fat = menuList.fatMenu();
-    List<Carbs> carbs = menuList.carbsMenu();
-    List<Fruits> fruits = menuList.fruitMenu();
-    List<String> summerVegetables = menuList.summerVegetablesMenu();
-    List<String> winterVegetables = menuList.winterVegetablesMenu();
-    List<PartyFood> partyMenu = menuList.partyMenu();
-
+    List<Protein> protein = UpdateMenu.protein;
+    List<Fat> fat = UpdateMenu.fat;
+    List<Carbs> carbs = UpdateMenu.carbs;
+    List<Fruits> fruits = UpdateMenu.fruits;
+    List<String> summerVegetables = UpdateMenu.summerVegetables;
+    List<String> winterVegetables = UpdateMenu.winterVegetables;
+    List<PartyFood> partyMenu = UpdateMenu.partyMenu;
 
     public String breakfastMenu() {
         System.out.println();
