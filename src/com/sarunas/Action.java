@@ -41,16 +41,25 @@ public class Action {
                     break;
                 case "party":
                     Menu party = new Menu();
+                    int dishes = 0;
+                    int participants = 0;
                     System.out.println("Please enter as many dishes as you want to order: ");
-                    boolean hasInt = scanner.hasNextInt();
-                    if (hasInt) {
-                        int dishes = scanner.nextInt();
+                    if (scanner.hasNextInt()) {
+                        dishes = scanner.nextInt();
                         scanner.nextLine();
-                        System.out.println("Please enter how many participants will attend the party: ");
-                        int participants = scanner.nextInt();
-                        scanner.nextLine();
-                        party.partyMenu(dishes, participants);
-                        rightOption = true;
+                        boolean correctInput = false;
+                        while (!correctInput) {
+                            System.out.println("Please enter how many participants will attend the party: ");
+                            if (scanner.hasNextInt()) {
+                                participants = scanner.nextInt();
+                                party.partyMenu(dishes, participants);
+                                scanner.nextLine();
+                                correctInput = true;
+                                rightOption = true;
+                            } else {
+                                scanner.nextLine();
+                            }
+                        }
                     } else {
                         scanner.nextLine();
                     }
